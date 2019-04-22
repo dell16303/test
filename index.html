@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="./css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="./css/app.css"/>
+		<style>
+			
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name, oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--侧滑菜单容器-->
+		<div id="app" >
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<h1 class="mui-title">底部选项卡-div模式</h1>
+					<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+				</header>
+			
+				<nav class="mui-bar mui-bar-tab" id="bottom-bar" id="tabbar-read">
+					<a class="mui-tab-item" href="#tab-webview">
+						<span class="mui-icon mui-icon-image"></span>
+						<span class="mui-tab-label">阅读</span>
+					</a>
+					<a class="mui-tab-item" href="#tab-webview" id="tabbar-like">
+						<span class="mui-icon mui-icon-star"></span>
+						<span class="mui-tab-label">收藏</span>
+					</a>
+					<a class="mui-tab-item " href="#tab-webview">
+						<span class="mui-icon mui-icon-pengyouquan"></span>
+						<span class="mui-tab-label">主页</span>
+					</a>
+					<a class="mui-tab-item" href="#tab-webview" id="tabbar-b">
+						<span class="mui-icon mui-icon-arrowleft"></span>
+						<span class="mui-tab-label">后退</span>
+					</a>
+					<a class="mui-tab-item" href="#tab-webview" id="tabbar-f">
+						<span class="mui-icon mui-icon-arrowright"></span>
+						<span class="mui-tab-label">前进</span>
+					</a>
+				</nav>
+				<div class="mui-content">
+					<div id="tab-webview" class="mui-control-content mui-active">
+						welcome
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<div id="event-bus"></div>
+	</body>
+	<script src="./js/mui.min.js"></script>
+	<script src="./js/setting.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./js/index/init.js"></script>
+	<script src="./js/index/main.js"></script>
+</html>
