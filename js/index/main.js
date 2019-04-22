@@ -4,22 +4,23 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		showpage: null,  // main-list , like-list, webview
-		showmode: null, // website, like
+		likemode: null, 
+		readmode: false, 
 		webViewURL : null, 
 		webViewTop : '0px', 
 		webViewHeight : '200px', 
 	},
 	methods: {
 		Init: function () {
-			this.showmode = 'website';
+			this.likemode = false;
 			
 			let mainView = document.getElementById('tab-webview');
 			let bottomView = document.getElementById('bottom-bar'); 
 			this.webViewTop = mainView.offsetTop + 'px';
 			this.webViewHeight = (bottomView.offsetTop -mainView.offsetTop )  + 'px';
 		},
-		ChangeMode: function (mode) {
-			this.showmode = mode;
+		ChangeMode: function () {
+			this.likemode = !this.likemode;
 		},
 		SelectWeb: function (webInfo) {
 			this.webViewURL = webInfo.url;
@@ -59,10 +60,10 @@ var app = new Vue({
 				mui.openWindow(windowInfo);
 			} 
 		} ,
-		'showmode' : function (){
-			if (this.showmode == 'website'){
+		'likemode' : function (){
+			if (this.likemode == false){
 				this.showpage = 'main-list';
-			}else if (this.showmode == 'like'){
+			}else if (this.likemode == true){
 				this.showpage = 'like-list';
 			}
 		}
