@@ -17,5 +17,5 @@ mui.init({
 
 mui.plusReady(function() {
 	
-	mui.fire(plus.webview.currentWebview(), 'Init',null);
+	mui.fire(plus.webview.currentWebview(), 'Init', null);
 });

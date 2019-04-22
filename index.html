@@ -68,19 +68,19 @@
 						<span class="mui-icon mui-icon-star"></span>
 						<span class="mui-tab-label">收藏</span>
 					</a>
-					<a class="mui-tab-item " href="#tab-webview" >
+					<a class="mui-tab-item " href="#tab-weblist"  v-if="!likemode">
 						<span class="mui-icon mui-icon-pengyouquan"></span>
 						<span class="mui-tab-label">导航列表</span>
 					</a>
-					<a class="mui-tab-item " href="#tab-webview" v-if="likemode">
+					<a class="mui-tab-item " href="#tab-likelist" v-if="likemode">
 						<span class="mui-icon mui-icon-pengyouquan"></span>
 						<span class="mui-tab-label">收藏列表</span>
 					</a>
-					<a class="mui-tab-item" href="#tab-webview" id="tabbar-b">
+					<a class="mui-tab-item" href="#tab-webview" id="tabbar-b" @click="GoBack">
 						<span class="mui-icon mui-icon-arrowleft"></span>
 						<span class="mui-tab-label">后退</span>
 					</a>
-					<a class="mui-tab-item" href="#tab-webview" id="tabbar-f">
+					<a class="mui-tab-item" href="#tab-webview" id="tabbar-f" @click="GoForward">
 						<span class="mui-icon mui-icon-arrowright"></span>
 						<span class="mui-tab-label">前进</span>
 					</a>
@@ -92,9 +92,9 @@
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell"><a href="./setting.html">更多设置</a>
 							</li>				
-							<li class="mui-table-view-cell"><a href="#">{{likemode ?  '关闭' ：'开启' }}开启收藏模式</a>
+							<li class="mui-table-view-cell" @click="ChangeLikeMode"><a href="#">{{likemodeOpenStr}}收藏模式</a>
 							</li>
-							<li class="mui-table-view-cell"><a href="#">{{readmode ?  '关闭' ：'开启' }}阅读模式</a>
+							<li class="mui-table-view-cell" @click="ChangeReadMode"><a href="#">{{readmodeOpenStr}}阅读模式</a>
 							</li>
 						</ul>
 					</div>

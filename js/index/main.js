@@ -19,8 +19,11 @@ var app = new Vue({
 			this.webViewTop = mainView.offsetTop + 'px';
 			this.webViewHeight = (bottomView.offsetTop -mainView.offsetTop )  + 'px';
 		},
-		ChangeMode: function () {
+		ChangeLikeMode: function () {
 			this.likemode = !this.likemode;
+		},
+		ChangeReadMode: function () {
+			this.readmode = !this.readmode;
 		},
 		SelectWeb: function (webInfo) {
 			this.webViewURL = webInfo.url;
@@ -67,21 +70,16 @@ var app = new Vue({
 				this.showpage = 'like-list';
 			}
 		}
-	}
+	},
+  computed: {
+    likemodeOpenStr: function () {
+      return this.likemode ? '关闭' :"开启";
+		},
+		readmodeOpenStr: function () {
+      return this.readmode ? '关闭' :"开启";
+		}
+  }
 })
-
-
-//添加自定义事件监听：选择一个
-window.addEventListener('selectWeb',function(event){
-  var info = event.detail;
-});
-
-
-//添加自定义事件监听
-window.addEventListener('changeMode',function(event){
-	var info = event.detail;
-	app.ChangeMode(info.mode);
-});
 
 
 //添加自定义事件监听
